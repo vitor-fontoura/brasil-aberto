@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\FacebookLoginController;
+use App\Http\Controllers\TwitterLoginController;
+
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -27,3 +30,13 @@ Route::get('/', function () {
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->name('dashboard');
+
+Route::prefix('facebook')->group(function () {
+    Route::get('/', [FacebookLoginController::class, 'redirectToProvider']);
+    Route::get('/callback', [FacebookLoginController::class, 'handleProviderCallback']);
+});
+
+Route::prefix('twitter')->group(function () {
+    Route::get('/', [TwitterLoginController::class, 'redirectToProvider']);
+    Route::get('/callback', [TwitterLoginController::class, 'handleProviderCallback']);
+});
