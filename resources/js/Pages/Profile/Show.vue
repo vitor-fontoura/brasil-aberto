@@ -15,6 +15,12 @@
                 </div>
 
                 <div v-if="$page.props.jetstream.canUpdatePassword">
+                    <link-account-form class="mt-10 sm:mt-0" />
+
+                    <jet-section-border />
+                </div>
+
+                <div v-if="$page.props.jetstream.canUpdatePassword">
                     <update-password-form class="mt-10 sm:mt-0" />
 
                     <jet-section-border />
@@ -45,6 +51,7 @@
     import LogoutOtherBrowserSessionsForm from '@/Pages/Profile/Partials/LogoutOtherBrowserSessionsForm.vue'
     import TwoFactorAuthenticationForm from '@/Pages/Profile/Partials/TwoFactorAuthenticationForm.vue'
     import UpdatePasswordForm from '@/Pages/Profile/Partials/UpdatePasswordForm.vue'
+    import LinkAccountForm from '@/Pages/Profile/Partials/LinkAccountForm.vue'
     import UpdateProfileInformationForm from '@/Pages/Profile/Partials/UpdateProfileInformationForm.vue'
 
     export default {
@@ -58,6 +65,7 @@
             TwoFactorAuthenticationForm,
             UpdatePasswordForm,
             UpdateProfileInformationForm,
+            LinkAccountForm,
         },
     }
 </script>

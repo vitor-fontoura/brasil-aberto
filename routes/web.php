@@ -32,11 +32,11 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 
 Route::prefix('facebook')->group(function () {
-    Route::get('/', [FacebookLoginController::class, 'redirectToProvider']);
+    Route::get('/', [FacebookLoginController::class, 'redirectToProvider'])->name('facebook');
     Route::get('/callback', [FacebookLoginController::class, 'handleProviderCallback']);
 });
 
 Route::prefix('twitter')->group(function () {
-    Route::get('/', [TwitterLoginController::class, 'redirectToProvider']);
+    Route::get('/', [TwitterLoginController::class, 'redirectToProvider'])->name('twitter');
     Route::get('/callback', [TwitterLoginController::class, 'handleProviderCallback']);
 });

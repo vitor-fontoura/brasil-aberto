@@ -1280,6 +1280,9 @@ select {
 .flex-1 {
 	flex: 1 1 0%;
 }
+.flex-none {
+	flex: none;
+}
 .flex-shrink-0 {
 	flex-shrink: 0;
 }
@@ -1421,6 +1424,9 @@ select {
 .border-2 {
 	border-width: 2px;
 }
+.border-0 {
+	border-width: 0px;
+}
 .border-b-2 {
 	border-bottom-width: 2px;
 }
@@ -1507,8 +1513,25 @@ select {
 	--tw-bg-opacity: 1;
 	background-color: rgba(229, 231, 235, var(--tw-bg-opacity));
 }
+.bg-sky-500 {
+	--tw-bg-opacity: 1;
+	background-color: rgba(14, 165, 233, var(--tw-bg-opacity));
+}
 .bg-opacity-25 {
 	--tw-bg-opacity: 0.25;
+}
+.bg-gradient-to-tr {
+	background-image: linear-gradient(to top right, var(--tw-gradient-stops));
+}
+.from-yellow-500 {
+	--tw-gradient-from: #f59e0b;
+	--tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(245, 158, 11, 0));
+}
+.via-red-500 {
+	--tw-gradient-stops: var(--tw-gradient-from), #ef4444, var(--tw-gradient-to, rgba(239, 68, 68, 0));
+}
+.to-pink-600 {
+	--tw-gradient-to: #db2777;
 }
 .object-cover {
 	-o-object-fit: cover;
@@ -1868,6 +1891,20 @@ select {
 	--tw-bg-opacity: 1;
 	background-color: rgba(249, 250, 251, var(--tw-bg-opacity));
 }
+.hover\:bg-sky-400:hover {
+	--tw-bg-opacity: 1;
+	background-color: rgba(56, 189, 248, var(--tw-bg-opacity));
+}
+.hover\:from-yellow-400:hover {
+	--tw-gradient-from: #fbbf24;
+	--tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(251, 191, 36, 0));
+}
+.hover\:via-red-400:hover {
+	--tw-gradient-stops: var(--tw-gradient-from), #f87171, var(--tw-gradient-to, rgba(248, 113, 113, 0));
+}
+.hover\:to-pink-500:hover {
+	--tw-gradient-to: #ec4899;
+}
 .hover\:text-gray-500:hover {
 	--tw-text-opacity: 1;
 	color: rgba(107, 114, 128, var(--tw-text-opacity));
@@ -1994,6 +2031,20 @@ select {
 .active\:bg-gray-50:active {
 	--tw-bg-opacity: 1;
 	background-color: rgba(249, 250, 251, var(--tw-bg-opacity));
+}
+.active\:bg-sky-600:active {
+	--tw-bg-opacity: 1;
+	background-color: rgba(2, 132, 199, var(--tw-bg-opacity));
+}
+.active\:from-yellow-600:active {
+	--tw-gradient-from: #d97706;
+	--tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(217, 119, 6, 0));
+}
+.active\:via-red-600:active {
+	--tw-gradient-stops: var(--tw-gradient-from), #dc2626, var(--tw-gradient-to, rgba(220, 38, 38, 0));
+}
+.active\:to-pink-700:active {
+	--tw-gradient-to: #be185d;
 }
 .active\:text-gray-700:active {
 	--tw-text-opacity: 1;
