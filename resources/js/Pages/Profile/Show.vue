@@ -15,7 +15,7 @@
                 </div>
 
                 <div v-if="$page.props.jetstream.canUpdatePassword">
-                    <link-account-form class="mt-10 sm:mt-0" />
+                    <link-account-form class="mt-10 sm:mt-0" :accounts="$page.props.user.accounts" />
 
                     <jet-section-border />
                 </div>

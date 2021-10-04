@@ -10,9 +10,12 @@ class FacebookLoginController extends Controller
 {
     public function redirectToProvider(Request $request)
     {
-        //return Socialite::driver('facebook')->scopes(['instagram_basic'])->asPopup()->usingGraphVersion('v11.0')->redirect();
-        
-        $req = Socialite::driver('facebook')->scopes(['instagram_basic'])->asPopup()->usingGraphVersion('v11.0')->redirect();
+        $req = Socialite::driver('facebook')
+            ->scopes(['instagram_basic', 'instagram_content_publish'])
+            ->asPopup()
+            ->usingGraphVersion('v12.0')
+            ->redirect();
+
         return Inertia::location($req->getTargetUrl());
         
     }
@@ -21,9 +24,14 @@ class FacebookLoginController extends Controller
     {
         if ($request->input('error') == "access_denied") {
             return 'user has decline the authorization';
-        } 
+        }
+
+        dump($request->all());
        
-        $user = Socialite::driver('facebook')->usingGraphVersion('v11.0')->user();
+        $user = Socialite::driver('facebook')
+            ->usingGraphVersion('v12.0')
+            ->user();
+
         dd($user);
     }
 }

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\FacebookLoginController;
+use App\Http\Controllers\SocialiteController;
 use App\Http\Controllers\TwitterLoginController;
 
 use Illuminate\Foundation\Application;
@@ -30,6 +31,11 @@ Route::get('/', function () {
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->name('dashboard');
+
+Route::prefix('social')->group(function() {
+    Route::get('/', [SocialiteController::class, 'redirectToProvider'])->name('social');
+    Route::get('/callback', [SocialiteController::class, 'handleProviderCallback']);
+});
 
 Route::prefix('facebook')->group(function () {
     Route::get('/', [FacebookLoginController::class, 'redirectToProvider'])->name('facebook');
